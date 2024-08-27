@@ -6,7 +6,7 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function formatDate(date: Date) {
-  return Intl.DateTimeFormat("en-US", {
+  return Intl.DateTimeFormat("es-ES", {
     month: "short",
     day: "2-digit",
     year: "numeric"
@@ -17,24 +17,28 @@ export function readingTime(html: string) {
   const textOnly = html.replace(/<[^>]+>/g, "");
   const wordCount = textOnly.split(/\s+/).length;
   const readingTimeMinutes = ((wordCount / 200) + 1).toFixed();
-  return `${readingTimeMinutes} min read`;
+  return `${readingTimeMinutes} min de lectura`;
 }
 
 export function dateRange(startDate: Date, endDate?: Date | string): string {
-  const startMonth = startDate.toLocaleString("default", { month: "short" });
+  const startMonth = startDate.toLocaleString("default", { month: "long" });
   const startYear = startDate.getFullYear().toString();
-  let endMonth;
-  let endYear;
+  let endMonth = "";
+  let endYear = "";
 
   if (endDate) {
     if (typeof endDate === "string") {
-      endMonth = "";
       endYear = endDate;
     } else {
-      endMonth = endDate.toLocaleString("default", { month: "short" });
+      endMonth = endDate.toLocaleString("default", { month: "long" });
       endYear = endDate.getFullYear().toString();
     }
   }
 
-  return `${startMonth}${startYear} - ${endMonth}${endYear}`;
+  const capitalize = (string: string) => string.charAt(0).toUpperCase() + string.slice(1);
+
+  const formattedStartMonth = capitalize(startMonth);
+  const formattedEndMonth = capitalize(endMonth);
+
+  return `${formattedStartMonth} ${startYear} - ${formattedEndMonth} ${endYear}`;
 }

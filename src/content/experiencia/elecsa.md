@@ -1,8 +1,8 @@
 ---
-company: "McDonalds"
-role: "French Fryer"
-dateStart: "03/16/2018"
-dateEnd: "07/01/2019"
+company: "Electro equipos del centro"
+role: "Diseñador CAD"
+dateStart: "11/20/2012"
+dateEnd: "05/11/2013"
 ---
 
 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure illo neque tempora, voluptatem est quaerat voluptas praesentium ipsa dolorem dignissimos nulla ratione distinctio quae maiores eligendi nostrum? Quibusdam, debitis voluptatum.
